@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goslang
+  labels:
+    app: goslang
+spec:
+
+  restartPolicy: Never
+
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+
+  containers:
+
+  - name: goslang-backend
+    image: scko823/goslang:latest
+    ports:
+    - containerPort: 8080
+    volumeMounts:
+    - name: shared-data
+      mountPath: /app/assets
+
+  - name: goslang-ui
+    image: scko823/goslang-ui:1.0.0
+    volumeMounts:
+    - name: shared-data
+      mountPath: /pod-data
+    command: ["/bin/sh"]
+    args: ["-c", "cp -r /usr/src/app/assets/* /pod-data && while true; do sleep 5; done"]
