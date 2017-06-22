@@ -4,8 +4,9 @@ metadata:
   name: goslang-service
 spec:
   ports:
-    - name: http
-      port: 9000
-      targetPort: 80
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
   selector:
     app: goslang
+  type: LoadBalancer
