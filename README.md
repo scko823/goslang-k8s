@@ -31,7 +31,7 @@ Kubernetes take the docker image it build, and help deploy it to google cloud.
 ###### Side notes: docker-compose
 I used docker-compse earlier for to orchestrate the frontend and backend, but Kubernetes do that, and also help me deploy to google cloud. You can see the attempt using docker-compse [here](https://github.com/scko823/goslang-solution)
 
-## [End product](http://35.188.158.206/)
+## [End product](http://35.192.119.198/)
 It is not much, it only let you add new rooms and type and broadcast new message within each room.
 
 TODO:
